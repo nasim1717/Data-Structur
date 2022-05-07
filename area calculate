@@ -1,0 +1,15 @@
+/// Lab task 1 qus no 2
+
+#include<bits/stdc++.h>
+using namespace std;
+float area(int x){
+    float y;
+    y = 3.1416*(x*x);
+return y;
+}
+int main(){
+    int y;
+    cin>>y;
+    cout<<"area = "<<area(y)<<endl;
+return 0;
+}
