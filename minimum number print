@@ -1,0 +1,21 @@
+/// Lab task 1 qus no 4
+
+#include<bits/stdc++.h>
+using namespace std;
+int print_array(int ar[],  int len){
+    int i,min=ar[0];
+    for(i=0; i<len; i++)
+        if(ar[i]<min)
+            min=ar[i];
+return min;
+}
+int main(){
+    int i,n,minimum, array[200];
+    cin>>n;
+    for(i=0; i<n; i++){
+        cin>>array[i];
+    }
+    minimum  = print_array(array, n);
+    cout<<minimum<<endl;
+return 0;
+}
