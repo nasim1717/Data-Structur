@@ -1,0 +1,30 @@
+/// Lab task 2 qus no 3 
+
+#include<bits/stdc++.h>
+#include<string.h>
+using namespace std;
+int scarch(char ar[], int n, char a[]){
+    int k=1,loc=0;
+    while(k<=n){
+        if(ar[k] == a[0])
+           loc = k;
+    k++;
+    }
+return loc;
+}
+int main(){
+    int i,n,location;
+    char data[200],iteam[200];
+    cin>>n;
+    for(i=1; i<=n; i++){
+        cin>>data[i];
+    }
+    cin>>iteam;
+    location = scarch(data, n, iteam);
+    if(location==0)
+        printf("ITEAM IS NOT IN THA ARRAY\n");
+    else
+        printf("location = %d\n", location);
+return 0;
+
+}
