@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+void  max_element(int ar[], int a){
+    int i,k = 0, max = ar[0],loc = 0;
+    while(k<a){
+        if(ar[k]>max){
+            max = ar[k];
+            loc = k;
+        }
+    k++;
+    }
+    cout<<"max = "<<max<<" "<<"loc = "<<loc<<endl;
+}
+int main(){
+    int i,n,data[200];
+    cin>>n;
+    for(i=0; i<n; i++){
+        cin>>data[i];
+    }
+    max_element(data, n);
+
+return 0;
+}
+
