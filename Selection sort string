@@ -1,0 +1,39 @@
+/// Lab task 5 qus no 2
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int selection_sort(string arr[], int k, int n, int loc){
+    string min2;
+    int j;
+    min2=arr[k];
+    loc = k;
+    for(j=k+1; j<=n; j++){
+        if(min2>arr[j]){
+            min2=arr[j];
+            loc = j;
+        }
+    }
+    return loc;
+}
+
+int main(){
+    string arr[100],temp;
+   int loc,k,n,min1;
+    cout<< "Enter the array size: ";
+    cin>>n;
+    for(k=1; k<=n; k++){
+        cin>>arr[k];
+    }
+    for(k=1; k<=n-1; k++){
+        min1 = selection_sort(arr, k, n, loc);
+        temp = arr[k];
+        arr[k] = arr[min1];
+        arr[min1] = temp;
+    }
+    cout<< "Selction sort all data: ";
+    for(k=1; k<=n; k++)
+        cout<<arr[k]<<" ";
+    cout<<endl;
+    return 0;
+}
