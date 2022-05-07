@@ -1,0 +1,93 @@
+/// Lab task 10 qus no 2
+
+#include<bits/stdc++.h>
+#include<stdlib.h>
+#include<string.h>
+using namespace std;
+
+
+struct node{
+    int num;
+    node *next;
+}*stnode=NULL;
+
+void createnode(int n){
+    node *tmp,*newn;
+
+    for(int i=0; i<n; i++){
+        newn = (node *)malloc(sizeof(node));
+
+        printf("\nEnter data: ");
+        cin>>newn->num;
+        newn->next=NULL;
+
+        if(stnode==NULL){
+            stnode=newn;
+            tmp=stnode;
+        }
+        else{
+            tmp->next=newn;
+            tmp=tmp->next;
+        }
+    }
+}
+
+
+void serach(int src){
+    int x=0;
+    node *tmp;
+    tmp=stnode;
+    while(tmp!=NULL){
+        if(tmp->num==src){
+            cout<<"\nFOund: "<<tmp->num<<endl;
+            x=1;
+            break;
+        }
+        tmp=tmp->next;
+    }
+    if(x==0)
+        cout<<"\nItem is not Found"<<endl;
+}
+
+void display(){
+    node *tmp;
+    if(stnode==NULL)
+        printf("\nList is empty.");
+    else{
+        tmp=stnode;
+        while(tmp!=NULL){
+            printf("\nData = %x %d %x", tmp, tmp->num, tmp->next);
+            printf("\n");
+            tmp = tmp->next;
+        }
+    }
+}
+
+
+
+int main(){
+    int opt,n,data;
+    do{
+        printf("\n1.Create");
+        printf("\n2.Search");
+        printf("\n3.Display");
+        printf("\nEnter the choice: ");
+        cin>>opt;
+        switch(opt){
+        case 1:
+            printf("Enter the node: ");
+            cin>>n;
+            createnode(n);
+            break;
+        case 2:
+            printf("Enter searchig item: ");
+            cin>>data;
+            serach(data);
+            break;
+        case 3:
+            display();
+            break;
+        }
+    }while(opt!=0);
+return 0;
+}
