@@ -1,0 +1,27 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+void insert_array(char ar[],int siz, int position){
+    int i;
+
+    for(i=position+1; i<=siz; i++)
+        ar[i-1] = ar[i];
+}
+int main(){
+    char arr[50];
+    int i,k,j,n;
+    printf("Enter the arry size: ");
+    cin>>n;
+    j = n;
+    //for(i=1; i<=n; i++){
+        gets(arr);
+
+    printf("Enter the position number: ");
+    cin>>k;
+    insert_array(arr,n,k);
+
+
+        puts(arr);
+    cout<<endl;
+
+}
