@@ -1,0 +1,21 @@
+
+#include<bits/stdc++.h>
+#include<math.h>
+using namespace std;
+int main(){
+    int a,b,c,d,x;
+    cin>>a>>b>>c;
+    d = b*b - (4*a*c);
+    if(d>0){
+        x = sqrt(d);
+        cout<<" x1 = "<<(-b+x)/(2*a)<<endl;
+        cout<<" x2 = "<<(-b-x)/(2*a)<<endl;
+    }
+    else if(d==0){
+        cout<<"x = "<<-b/(2*a)<<endl;
+        cout<<"UNIQUE SOLUTION"<<endl;
+    }
+    else
+        cout<<"NO REAL SOLUTION"<<endl;
+return 0;
+}
