@@ -1,0 +1,33 @@
+/// Lab task 5 qus no 1 
+
+#include<bits/stdc++.h>
+using namespace std;
+void insertion_sort(string arr[], int n){
+    string temp;
+    int ptr,k;
+    arr[0] = 'A';
+    for(k=2; k<=n; k++){
+        temp = arr[k];
+        ptr = k-1;
+        while(temp<arr[ptr]){
+            arr[ptr+1] = arr[ptr];
+            ptr--;
+        }
+        arr[ptr+1]=temp;
+    }
+}
+int main(){
+    string arr[100];
+    int k,n;
+    cout<< "Enter the array size: ";
+    cin>>n;
+    for(k=1; k<=n; k++){
+        cin>>arr[k];
+    }
+    insertion_sort(arr, n);
+    for(k=1; k<=n; k++)
+        cout<<arr[k]<<" ";
+    cout<<endl;
+return 0;
+}
+
