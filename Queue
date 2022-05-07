@@ -1,0 +1,89 @@
+/// Lab task 7
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int Queues[50],n=3,Front=0,rear=0;
+
+void queue_insert(int item){
+    if((Front==1 && rear==n) || Front==rear+1)
+        cout<<"\nOverflow"<<endl<<endl;
+    else if(Front==0){
+        Front=1,rear=1;
+        Queues[rear]=item;
+    }
+    else if(rear==n){
+        rear=1;
+        Queues[rear]=item;
+    }
+    else{
+        rear++;
+        Queues[rear]=item;
+    }
+}
+void queue_deleted(){
+    int item;
+    item = Queues[Front];
+    if(Front==0){
+        printf("\nUnderflow\n");
+    }
+    else if(Front==rear){
+        printf("\nDeleted data: %d\n", item);
+        Queues[Front]=0;
+        Front=0;
+        rear=0;
+    }
+    else if(Front==n){
+        printf("\nDeleted data: %d\n", item);
+        Queues[Front]=0;
+        Front=1;
+    }
+    else{
+        printf("\nDeleted data: %d\n", item);
+        Queues[Front]=0;
+        Front++;
+    }
+}
+
+void queue_display(){
+    int i,sum;
+
+    if(Front>0){
+        printf("\nDisplay all data: ");
+        for(i=1; i<=n; i++){
+            if(Queues[i]!=0)
+                cout<<Queues[i]<<" ";
+        }
+    }
+    else
+        cout<<"\nNULL";
+    cout<<"\n\n";
+}
+int main(){
+    int opt,item,n;
+    do{
+        printf("\n1.Queue_insert");
+        printf("\n2.Queue_Deleted");
+        printf("\n3.\Queue_Display\n");
+        printf("Enter the choice: ");
+        cin>>opt;
+        switch(opt){
+        case 1:
+            printf("\nEnter the valu: ");
+            cin>>item;
+            queue_insert(item);
+            break;
+
+        case 2:
+            queue_deleted();
+            break;
+        case 3:
+            queue_display();
+            break;
+        default:
+            printf("\nInvalid\n");
+            break;
+        }
+    }while(opt>=1 && opt<=3);
+    return 0;
+}
