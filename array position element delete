@@ -1,0 +1,28 @@
+// Lab task 3 qus no 2
+
+#include<stdio.h>
+void delete_array(int ar[], int n, int position){
+    position = position;
+    while(position<=n-1){
+        ar[position] = ar[position+1];
+        position++;
+    }
+
+}
+
+int main(){
+    int arr[100],n,i,position;
+    printf("Enter the array size: ");
+    scanf("%d", &n);
+    for(i=1; i<=n; i++){
+        scanf("%d", &arr[i]);
+    }
+    printf("Enter the delete position number: ");
+    scanf("%d", &position);
+    delete_array(arr,n,position);
+
+    for(i=1; i<=n-1; i++)
+        printf("%d ", arr[i]);
+    printf("\n");
+return 0;
+}
