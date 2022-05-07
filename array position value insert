@@ -1,0 +1,36 @@
+/// Lab task 3 qus no 1
+
+
+#include<stdio.h>
+void insert_array(int ar[], int siz, int ele, int pos){
+    int j;
+    j = siz;
+    while(j>=pos){
+        ar[j+1] = ar[j];
+        j--;
+    }
+     ar[pos] = ele;
+
+
+}
+int main(){
+    int arr[100],n,i,k,iteam;
+    printf("Enter the array size: ");
+    scanf("%d", &n);
+    for(i=1; i<=n; i++){
+        scanf("%d", &arr[i]);
+    }
+    printf("Enter the position no: ");
+    scanf("%d", &k);
+    printf("Enter the element of data: ");
+    scanf("%d", &iteam);
+    insert_array(arr,n,iteam,k);
+
+    for(i=1; i<=n+1; i++)
+        printf("%d ", arr[i]);
+return 0;
+
+}
+
+
+
