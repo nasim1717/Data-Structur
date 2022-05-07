@@ -1,0 +1,35 @@
+/// Lab task 4 qus no 2
+
+#include<bits/stdc++.h>
+using namespace std;
+int binary(string data[], int ub,string item){
+    int Beg=1,End=ub,mid;
+    mid = (Beg+End)/2;
+    while(Beg<=End && data[mid]!=item){
+        if(item<data[mid])
+            End = mid-1;
+        else
+            Beg = mid+1;
+
+        mid = (Beg+End)/2;
+    }
+return mid;
+}
+int main(){
+    string data[200],item,loc;
+    int lb,ub=13,binary_1;
+    lb = 1;
+    for(lb=1; lb<=ub; lb++){
+        cin>>data[lb];
+    }
+    printf("Enter the Item: ");
+    cin>>item;
+   binary_1 =  binary(data,ub,item);
+    if(data[binary_1]==item){
+        loc = binary_1;
+        cout<<"loc = "<<loc<<endl;
+    }
+    else
+        printf("item is not found\n");
+return 0;
+}
