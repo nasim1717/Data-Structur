@@ -1,0 +1,68 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int top=-1;
+
+void push(string stacks[], string iteam, int maxstacks){
+    if(top==maxstacks)
+        cout<<"\nOverflow"<<endl<<endl;
+    else{
+        top++;
+        stacks[top]=iteam;
+    }
+}
+void pop(string stacks[]){
+    string iteam;
+    iteam = stacks[top];
+    if(top>-1){
+        printf("Delete data: %d\n\n", iteam);
+        top--;
+    }
+    else
+        printf("\nUnderflow\n\n");
+
+}
+
+void display(string stacks[]){
+    int i;
+    if(top>-1){
+        printf("Display all data: ");
+        for(i=0; i<=top; i++){
+            cout<<stacks[i]<<" ";
+        }
+    }
+    else
+        cout<<"\nNULL\n\n";
+    cout<<"\n\n";
+}
+int main(){
+    int opt,n;
+    printf("Enter the stacks size: ");
+    cin>>n;
+   string stacks[n],iteam;
+    do{
+        printf("\n1.Push");
+        printf("\n2.Pop");
+        printf("\n3.Display\n");
+        printf("Enter the choice: ");
+        cin>>opt;
+        switch(opt){
+        case 1:
+            printf("Enter the valu: ");
+            cin>>iteam;
+            push(stacks,iteam,n);
+            break;
+
+        case 2:
+            pop(stacks);
+            break;
+        case 3:
+            display(stacks);
+            break;
+        default:
+            cout<<"again choise"<<endl;
+            break;
+        }
+    }while(opt);
+    return 0;
+}
