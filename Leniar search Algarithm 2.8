@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+int search_element(int ar[], int n, int a){
+    int k=1,loc=0;
+    while(k<=n){
+        if(ar[k] == a)
+           loc = k;
+    k++;
+    }
+return loc;
+}
+int main(){
+    int i,n,data[200],iteam,location;
+    cin>>n;
+    for(i=1; i<=n; i++){
+        cin>>data[i];
+    }
+    cin>>iteam;
+    location = search_element(data, n, iteam);
+    if(location==0)
+        printf("ITEAM IS NOT IN THA ARRAY\n");
+    else
+        printf("location = %d\n", location);
+return 0;
+
+}
