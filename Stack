@@ -1,0 +1,67 @@
+/// Lab task 6
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int stacks[2],maxstacks=2,top=-1;
+
+void push(int iteam){
+    if(top==maxstacks)
+        cout<<"\nOverflow"<<endl<<endl;
+    else{
+        top++;
+        stacks[top]=iteam;
+    }
+}
+void pop(){
+    int iteam;
+    iteam = stacks[top];
+    if(top>-1){
+        printf("\nDelete data: %d\n\n", iteam);
+        top--;
+    }
+    else
+        printf("\nUnderflow\n\n");
+
+}
+
+void display(){
+    int i;
+    if(top>-1){
+        cout<<"\nstacks all data: ";
+        for(i=0; i<=top; i++)
+            cout<<stacks[i]<<" ";
+    }
+    else
+        cout<<"\nNULL"<<endl;
+    cout<<"\n\n";
+}
+int main(){
+    int opt,iteam,n;
+
+    do{
+        printf("\n1.Push");
+        printf("\n2.Pop");
+        printf("\n3.Display\n");
+        printf("Enter the choice: ");
+        cin>>opt;
+        switch(opt){
+        case 1:
+            printf("Enter the valu: ");
+            cin>>iteam;
+            push(iteam);
+            break;
+
+        case 2:
+            pop();
+            break;
+        case 3:
+            display();
+            break;
+        default:
+            cout<<"Again choise\n\n";
+            break;
+        }
+    }while(opt);
+    return 0;
+}
