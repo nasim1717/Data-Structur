@@ -1,0 +1,35 @@
+/// Lab  task 4 qus no 1
+
+#include<bits/stdc++.h>
+using namespace std;
+void bubble(int data[], int n){
+    int k=1,temp,ptr;
+    for(k=1; k<=n; k++){
+        ptr = 1;
+        while(ptr<=n-k){
+            if(data[ptr] > data[ptr+1]){
+                temp = data[ptr];
+                data[ptr] = data[ptr+1];
+                data[ptr+1] = temp;
+
+            }
+        ptr++;
+        }
+    }
+}
+
+int main(){
+    int k,n,data[200];
+    printf("Enter the array size: ");
+    cin>>n;
+    for(k=1; k<=n; k++)
+        cin>>data[k];
+
+    bubble(data,n);
+
+    printf("Bubble sort all data: ");
+    for(k=1; k<=n; k++)
+        printf("%d ", data[k]);
+    cout<<endl;
+
+}
